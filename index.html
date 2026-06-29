@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio website for Muhammad Abdullah Javaid, Computer Vision and Machine Learning Engineer." />
+  <title>Muhammad Abdullah Javaid | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1728;
+      --panel: rgba(12, 23, 40, 0.78);
+      --panel-border: rgba(153, 197, 255, 0.16);
+      --text: #e8f1ff;
+      --muted: #9cb0cb;
+      --line: rgba(156, 176, 203, 0.18);
+      --accent: #61e1c2;
+      --accent-2: #7aa7ff;
+      --accent-3: #ffbf69;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --content-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(97, 225, 194, 0.16), transparent 24%),
+        radial-gradient(circle at top right, rgba(122, 167, 255, 0.16), transparent 28%),
+        radial-gradient(circle at 20% 20%, rgba(255, 191, 105, 0.10), transparent 18%),
+        linear-gradient(180deg, #050b14 0%, #07111f 45%, #091521 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 75%);
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: min(calc(100% - 32px), var(--content-width));
+      margin: 0 auto;
+      padding: 18px 0 48px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 16px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: rgba(6, 12, 22, 0.68);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      color: #04111a;
+      background: linear-gradient(135deg, var(--accent), #cffaf0);
+      box-shadow: 0 10px 28px rgba(97, 225, 194, 0.25);
+      flex: 0 0 auto;
+    }
+
+    .brand-copy {
+      min-width: 0;
+    }
+
+    .brand-copy strong,
+    h1,
+    h2,
+    h3,
+    .metric strong,
+    .eyebrow,
+    .section-label,
+    .nav a,
+    .project-tag,
+    .chip,
+    .timeline-role,
+    .footer-note strong {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 0.98rem;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: flex-end;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav a:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 16px;
+    }
+
+    .panel {
+      border: 1px solid var(--panel-border);
+      background: var(--panel);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      right: -160px;
+      top: -180px;
+      background: radial-gradient(circle, rgba(97, 225, 194, 0.24), transparent 65%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(97, 225, 194, 0.22);
+      background: rgba(97, 225, 194, 0.08);
+      color: #cdf7ec;
+      font-size: 0.88rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(97, 225, 194, 0.14);
+    }
+
+    h1 {
+      margin: 16px 0 14px;
+      font-size: clamp(2.9rem, 6vw, 5.7rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 10ch;
+    }
+
+    .hero-main > p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--accent), #c1fff0);
+      color: #05131a;
+    }
+
+    .button.secondary {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      min-height: 94px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.55rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .profile-card {
+      padding: 26px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .avatar {
+      width: 108px;
+      height: 108px;
+      border-radius: 30px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .profile-title {
+      margin: 0;
+      font-size: 1.45rem;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    .profile-subtitle {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .inline-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(255, 255, 255, 0.04);
+      color: #dce9fb;
+      font-size: 0.88rem;
+    }
+
+    .chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px rgba(122, 167, 255, 0.12);
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 13px 15px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-1px);
+      border-color: rgba(97, 225, 194, 0.32);
+    }
+
+    .contact-link span:first-child {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contact-link span:last-child {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 24px;
+      padding: 30px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .section-label {
+      margin: 0 0 6px;
+      color: var(--accent);
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-copy {
+      margin: 0;
+      max-width: 66ch;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .timeline-date {
+      color: var(--accent-3);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .timeline-role {
+      margin: 0 0 4px;
+      font-size: 1.08rem;
+      line-height: 1.2;
+    }
+
+    .timeline-org {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .timeline-list {
+      margin: 0;
+      padding-left: 18px;
+      color: #dbe7f7;
+    }
+
+    .timeline-list li + li {
+      margin-top: 6px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+    }
+
+    .showcase-hero {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        linear-gradient(180deg, rgba(97, 225, 194, 0.09), rgba(255, 255, 255, 0.03)),
+        rgba(255, 255, 255, 0.02);
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .showcase-logo {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 18px;
+      object-fit: contain;
+    }
+
+    .showcase-grid-inner {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .media-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .media-card img {
+      display: block;
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      background: #09121f;
+    }
+
+    .media-copy {
+      padding: 16px 18px 18px;
+    }
+
+    .media-copy h3 {
+      margin: 0 0 6px;
+    }
+
+    .media-copy p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .project-card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.025)),
+        rgba(255, 255, 255, 0.02);
+      display: grid;
+      gap: 14px;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .project-tag {
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin: 6px 0 0;
+      font-size: 1.18rem;
+      line-height: 1.15;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .project-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #dce9fb;
+    }
+
+    .project-card ul li + li {
+      margin-top: 6px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stack-group {
+      display: grid;
+      gap: 12px;
+    }
+
+    .stack-group h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: #f3f7ff;
+    }
+
+    .stack-group p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer {
+      margin-top: 24px;
+      padding: 28px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--panel-border);
+      background: rgba(6, 12, 22, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .footer-note {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .muted-link {
+      color: var(--muted);
+    }
+
+    .muted-link:hover {
+      color: var(--text);
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 1080px) {
+      .hero,
+      .grid-3,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .footer,
+      .topbar {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .nav,
+      .footer-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(calc(100% - 20px), var(--content-width));
+        padding-bottom: 24px;
+      }
+
+      .topbar {
+        border-radius: 24px;
+        top: 10px;
+      }
+
+      .hero-main,
+      .section,
+      .footer,
+      .profile-card {
+        padding: 22px;
+      }
+
+      h1 {
+        max-width: 12ch;
+        font-size: clamp(2.5rem, 13vw, 4rem);
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal,
+      .button,
+      .nav a,
+      .contact-link {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar panel">
+      <div class="brand">
+        <div class="brand-mark">AJ</div>
+        <div class="brand-copy">
+          <strong>Muhammad Abdullah Javaid</strong>
+          <span>Computer Vision and Machine Learning Engineer</span>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <article class="panel hero-main reveal">
+          <div class="eyebrow">Building AI systems that ship</div>
+          <h1>Muhammad Abdullah Javaid</h1>
+          <p>
+            I build practical AI products across computer vision, machine learning, and agentic workflows.
+            My focus is turning research-heavy ideas into useful systems like face recognition pipelines,
+            LLM-powered assistants, and automation tools that help teams work faster.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">See selected work</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/muhammad-abdullah-javaid-13a458158/" target="_blank" rel="noreferrer">LinkedIn profile</a>
+          </div>
+          <div class="hero-meta">
+            <div class="metric">
+              <strong>5+ yrs</strong>
+              <span>experience in ML engineering and AI-powered applications</span>
+            </div>
+            <div class="metric">
+              <strong>CV + LLMs</strong>
+              <span>computer vision, NLP, and agentic AI systems</span>
+            </div>
+            <div class="metric">
+              <strong>1 paper</strong>
+              <span>published research in gaze estimation for driver assistance</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="hero-side">
+          <div class="panel profile-card reveal">
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/44797454?v=4" alt="Muhammad Abdullah Javaid" />
+            <div>
+              <p class="profile-title">Senior Research Officer</p>
+              <p class="profile-subtitle">Computer Vision and ML Engineer at KICS, UET Lahore</p>
+            </div>
+            <div class="inline-list">
+              <span class="chip">Python</span>
+              <span class="chip">LangChain</span>
+              <span class="chip">LangGraph</span>
+              <span class="chip">PyTorch</span>
+              <span class="chip">TensorFlow</span>
+            </div>
+          </div>
+
+          <div class="panel profile-card reveal">
+            <div class="section-head" style="margin-bottom: 0;">
+              <div>
+                <p class="section-label">Contact</p>
+                <h2 style="font-size: 1.4rem;">Let’s connect</h2>
+              </div>
+            </div>
+            <div class="contact-grid">
+              <a class="contact-link" href="mailto:abdullahjavaid0307@gmail.com">
+                <span>Email</span>
+                <span>abdullahjavaid0307@gmail.com</span>
+              </a>
+              <a class="contact-link" href="https://github.com/abdullah0307" target="_blank" rel="noreferrer">
+                <span>GitHub</span>
+                <span>abdullah0307</span>
+              </a>
+              <a class="contact-link" href="https://www.linkedin.com/in/muhammad-abdullah-javaid-13a458158/" target="_blank" rel="noreferrer">
+                <span>LinkedIn</span>
+                <span>Profile</span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <p class="section-label">About</p>
+            <h2>Research-minded engineering with a product focus</h2>
+          </div>
+          <p class="section-copy">
+            Public profile and CV details were used to shape this site, with the aim of presenting your work
+            as a clean, professional portfolio instead of a static resume.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Computer Vision</h3>
+            <p>Face recognition, object detection, motion detection, safety monitoring, and medical imaging workflows.</p>
+          </div>
+          <div class="card">
+            <h3>Agentic AI</h3>
+            <p>LangChain, LangGraph, OpenAI Agents SDK, and automation assistants for email, research, and scheduling.</p>
+          </div>
+          <div class="card">
+            <h3>Applied ML</h3>
+            <p>Sentiment analysis, predictive modeling, NLP experiments, and real-world systems built for practical use.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Experience</p>
+            <h2>Roles and responsibilities</h2>
+          </div>
+          <p class="section-copy">A concise timeline of the work that shaped your portfolio.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Dec 2020 - Present</div>
+            <div>
+              <p class="timeline-role">Senior Research Officer - Computer Vision & ML Engineer</p>
+              <p class="timeline-org">KICS, UET Lahore</p>
+              <ul class="timeline-list">
+                <li>Developed face recognition, object detection, and motion detection systems.</li>
+                <li>Built medical chatbots, sentiment analysis, and predictive modeling workflows.</li>
+                <li>Created agentic AI automation using LangChain and LangGraph.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Oct 2018 - Mar 2019</div>
+            <div>
+              <p class="timeline-role">Android App Development Trainee</p>
+              <p class="timeline-org">KICS, UET Lahore</p>
+              <ul class="timeline-list">
+                <li>Learned and implemented core Android application concepts.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Selected Work</p>
+            <h2>Featured projects</h2>
+          </div>
+          <p class="section-copy">I grouped the repo content into a few portfolio-friendly highlights so the page reads well at a glance.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <span class="project-tag">LLM / RAG</span>
+                <h3>PDFChatbot and knowledge assistants</h3>
+              </div>
+            </div>
+            <p>Conversational systems that retrieve, summarize, and answer questions from documents and internal knowledge sources.</p>
+            <ul>
+              <li>PDFChatbot with conversational retrieval.</li>
+              <li>LLM-based PDF and image chatbot with RAG.</li>
+              <li>Custom knowledge retrieval assistant and research agent.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <span class="project-tag">Agentic AI</span>
+                <h3>Email, calendar, and research automation</h3>
+              </div>
+            </div>
+            <p>Workflow-oriented AI tools that help with research, triage, scheduling, and drafting tasks.</p>
+            <ul>
+              <li>Email Assistant using GPT, LangChain, and OpenAI Agents SDK.</li>
+              <li>Smart Calendar Agent with triage and scheduling support.</li>
+              <li>Automated research agent for literature review.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <span class="project-tag">Computer Vision</span>
+                <h3>Detection and recognition systems</h3>
+              </div>
+            </div>
+            <p>Applied CV projects that focus on accuracy, real-time performance, and practical deployment use cases.</p>
+            <ul>
+              <li>Face recognition, motion detection, and mask detection.</li>
+              <li>Fire and smoke detection, shoplifting detection, and vehicle analysis.</li>
+              <li>Basketball scoring, card detection, and document scanning.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <span class="project-tag">Research</span>
+                <h3>Publication and academic work</h3>
+              </div>
+            </div>
+            <p>Work that connects your practical engineering background with research and conference output.</p>
+            <ul>
+              <li>Gaze Estimation for Driver Assistance, ICIC 2021.</li>
+              <li>Multilingual hate speech detection experiments.</li>
+              <li>ML and CV projects backed by research workflows.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="uet-ai-projects" class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <p class="section-label">UET AI Projects</p>
+            <h2>Your live demos from the project site</h2>
+          </div>
+          <p class="section-copy">
+            I pulled in the GIFs and image from <a class="muted-link" href="https://uetaiprojects.com/" target="_blank" rel="noreferrer">uetaiprojects.com</a>
+            so visitors can see the work in motion.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <div class="showcase-hero">
+            <img class="showcase-logo" src="assets/uetaiprojects/linkedIn_logo.png" alt="UET AI Projects logo" />
+            <h3 style="margin: 0; font-size: 1.25rem;">A project gallery built by you</h3>
+            <p style="margin: 0; color: var(--muted);">
+              This section spotlights the demos from your own site and gives the portfolio a more proof-driven feel.
+            </p>
+            <div class="chips">
+              <span class="chip">Computer Vision</span>
+              <span class="chip">Surveillance</span>
+              <span class="chip">Analytics</span>
+              <span class="chip">Project demos</span>
+            </div>
+          </div>
+
+          <div class="showcase-grid-inner">
+            <article class="project-card media-card">
+              <img src="assets/uetaiprojects/attendance_monitoring.gif" alt="Attendance monitoring demo GIF" />
+              <div class="media-copy">
+                <h3>Attendance monitoring</h3>
+                <p>Automated attendance capture and tracking workflow.</p>
+              </div>
+            </article>
+            <article class="project-card media-card">
+              <img src="assets/uetaiprojects/vehicle_analytics.gif" alt="Vehicle analytics demo GIF" />
+              <div class="media-copy">
+                <h3>Vehicle analytics</h3>
+                <p>Traffic and vehicle analysis in a live demo format.</p>
+              </div>
+            </article>
+            <article class="project-card media-card">
+              <img src="assets/uetaiprojects/lab_survelliance.gif" alt="Lab surveillance demo GIF" />
+              <div class="media-copy">
+                <h3>Lab surveillance</h3>
+                <p>Monitoring and detection workflow for lab environments.</p>
+              </div>
+            </article>
+            <article class="project-card media-card">
+              <img src="assets/uetaiprojects/classroom_survelliance.gif" alt="Classroom surveillance demo GIF" />
+              <div class="media-copy">
+                <h3>Classroom surveillance</h3>
+                <p>Computer vision demo for classroom monitoring use cases.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Skills</p>
+            <h2>What this application shows</h2>
+          </div>
+          <p class="section-copy">A portfolio-ready summary of the full application work you built, from computer vision demos to the product UI around them.</p>
+        </div>
+        <div class="grid-2">
+          <div class="stack-group card">
+            <h3>End-to-end application development</h3>
+            <p>Planning, building, and presenting the full product experience, including the portfolio UI and the project showcase pages.</p>
+          </div>
+          <div class="stack-group card">
+            <h3>Computer vision systems</h3>
+            <p>Attendance monitoring, vehicle analytics, lab surveillance, classroom surveillance, object detection, tracking, and real-time video analysis.</p>
+          </div>
+          <div class="stack-group card">
+            <h3>AI and automation</h3>
+            <p>Machine learning, deep learning, face recognition, detection workflows, and AI-powered automation features.</p>
+          </div>
+          <div class="stack-group card">
+            <h3>Frontend and presentation</h3>
+            <p>Responsive HTML, CSS, JavaScript, asset integration, media showcases, and clean storytelling for demos and results.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Education & More</p>
+            <h2>Background, credentials, and community</h2>
+          </div>
+          <p class="section-copy">A quick way to round out the portfolio without making the page feel overloaded.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Education</h3>
+            <p>BSc Information Technology, Government College of Science Wahdat Road, Lahore (2016-2020)</p>
+            <p style="margin-top: 10px;">Intermediate in Computer Science, Government Islamia College Railway Road, Lahore (2014-2016)</p>
+          </div>
+          <div class="card">
+            <h3>Certifications and publication</h3>
+            <p>Computer Vision & ML, KICS UET Lahore (2020-2021)</p>
+            <p style="margin-top: 10px;">Mobile App Development, KICS UET Lahore (2018-2019)</p>
+            <p style="margin-top: 10px;">Publication: Gaze Estimation for Driver Assistance, ICIC 2021</p>
+          </div>
+          <div class="card">
+            <h3>Awards and activities</h3>
+            <p>Talent Awards, Hackathon judging, Lahore Science Mela participation, and paper publication recognition.</p>
+          </div>
+          <div class="card">
+            <h3>Community and interests</h3>
+            <p>Volunteer work, responsible AI, Unity game development, open-source AI tools, and hackathons.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="footer">
+      <div>
+        <p class="footer-note"><strong>Ready to collaborate?</strong> This portfolio is now structured as a live landing page rather than a plain CV.</p>
+        <p class="footer-note">If you want, we can add case studies, a blog, or a downloadable resume next.</p>
+      </div>
+      <div class="footer-actions">
+        <a class="button secondary" href="mailto:abdullahjavaid0307@gmail.com">Email me</a>
+        <a class="button primary" href="https://github.com/abdullah0307" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
