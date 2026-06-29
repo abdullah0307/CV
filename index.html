@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio-theme.css">
   <style>
     :root {
       --bg: #07111f;
@@ -900,65 +901,65 @@
         <div class="section-head">
           <div>
             <p class="section-label">Selected Work</p>
-            <h2>Featured projects</h2>
+            <h2>Computer vision projects</h2>
           </div>
-          <p class="section-copy">I grouped the repo content into a few portfolio-friendly highlights so the page reads well at a glance.</p>
+          <p class="section-copy">A CV-first selection of the application work, with the strongest real-time detection and monitoring demos up front.</p>
         </div>
         <div class="project-grid">
           <article class="project-card">
             <div class="project-top">
               <div>
-                <span class="project-tag">LLM / RAG</span>
-                <h3>PDFChatbot and knowledge assistants</h3>
+                <span class="project-tag">Real-time monitoring</span>
+                <h3>Attendance monitoring system</h3>
               </div>
             </div>
-            <p>Conversational systems that retrieve, summarize, and answer questions from documents and internal knowledge sources.</p>
+            <p>Automated attendance capture and tracking built around computer vision workflows.</p>
             <ul>
-              <li>PDFChatbot with conversational retrieval.</li>
-              <li>LLM-based PDF and image chatbot with RAG.</li>
-              <li>Custom knowledge retrieval assistant and research agent.</li>
+              <li>Live attendance monitoring demo.</li>
+              <li>Face-based recognition and tracking workflow.</li>
+              <li>Designed for classroom and institutional use cases.</li>
             </ul>
           </article>
           <article class="project-card">
             <div class="project-top">
               <div>
-                <span class="project-tag">Agentic AI</span>
-                <h3>Email, calendar, and research automation</h3>
+                <span class="project-tag">Traffic analytics</span>
+                <h3>Vehicle analytics system</h3>
               </div>
             </div>
-            <p>Workflow-oriented AI tools that help with research, triage, scheduling, and drafting tasks.</p>
+            <p>Vehicle counting and analytics demo for monitoring roads and traffic flow.</p>
             <ul>
-              <li>Email Assistant using GPT, LangChain, and OpenAI Agents SDK.</li>
-              <li>Smart Calendar Agent with triage and scheduling support.</li>
-              <li>Automated research agent for literature review.</li>
+              <li>Vehicle detection and analysis in motion.</li>
+              <li>Useful for traffic monitoring and lane activity review.</li>
+              <li>Built as a visual, real-time CV application.</li>
             </ul>
           </article>
           <article class="project-card">
             <div class="project-top">
               <div>
                 <span class="project-tag">Computer Vision</span>
-                <h3>Detection and recognition systems</h3>
+                <h3>Lab and classroom surveillance</h3>
               </div>
             </div>
-            <p>Applied CV projects that focus on accuracy, real-time performance, and practical deployment use cases.</p>
+            <p>Surveillance-style vision systems for indoor monitoring and situational awareness.</p>
             <ul>
-              <li>Face recognition, motion detection, and mask detection.</li>
-              <li>Fire and smoke detection, shoplifting detection, and vehicle analysis.</li>
-              <li>Basketball scoring, card detection, and document scanning.</li>
+              <li>Lab surveillance demo.</li>
+              <li>Classroom surveillance demo.</li>
+              <li>Focused on detection overlays and live visual feedback.</li>
             </ul>
           </article>
           <article class="project-card">
             <div class="project-top">
               <div>
-                <span class="project-tag">Research</span>
-                <h3>Publication and academic work</h3>
+                <span class="project-tag">CV stack</span>
+                <h3>Recognition and detection toolkit</h3>
               </div>
             </div>
-            <p>Work that connects your practical engineering background with research and conference output.</p>
+            <p>Core computer vision capabilities behind the larger application experience.</p>
             <ul>
-              <li>Gaze Estimation for Driver Assistance, ICIC 2021.</li>
-              <li>Multilingual hate speech detection experiments.</li>
-              <li>ML and CV projects backed by research workflows.</li>
+              <li>Face recognition and motion detection.</li>
+              <li>Object detection, mask detection, and safety monitoring.</li>
+              <li>Fire, smoke, and intrusion-style vision workflows.</li>
             </ul>
           </article>
         </div>
@@ -1022,6 +1023,92 @@
             </article>
           </div>
         </div>
+      </section>
+
+      <section class="section panel reveal" id="featured-project-showcase">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Featured Showcase</p>
+            <h2>Project slideshow</h2>
+          </div>
+          <p class="section-copy">
+            A themed slider built from your portfolio package, showing a curated mix of AI automation, surveillance, traffic, and inspection work.
+          </p>
+        </div>
+
+        <section class="ai-project-showcase" id="featured-ai-projects">
+          <div class="ai-project-container">
+            <div class="ai-section-kicker">Featured Portfolio Work</div>
+            <h2 class="ai-section-title">
+              AI, Agentic Systems & <span class="ai-gradient-text">Computer Vision Projects</span>
+            </h2>
+            <p class="ai-section-lead">
+              A curated slideshow of applied systems covering automation, computer vision, surveillance analytics, traffic intelligence, and inspection workflows.
+            </p>
+
+            <div class="ai-slider-shell" data-ai-slider>
+              <div class="ai-slider-toolbar">
+                <div class="ai-slide-count"><strong data-ai-current>01</strong> / 08</div>
+                <div class="ai-slider-actions" aria-label="Project slideshow controls">
+                  <button class="ai-nav-btn" type="button" data-ai-prev aria-label="Previous project">‹</button>
+                  <button class="ai-nav-btn" type="button" data-ai-next aria-label="Next project">›</button>
+                </div>
+              </div>
+
+              <div class="ai-slide-frame">
+                <img
+                  class="ai-slide-image"
+                  data-ai-main-image
+                  src="assets/projects/01-dental-clinic-automation.png"
+                  alt="Agentic AI System for Dental Clinic Automation project slide"
+                />
+              </div>
+
+              <div class="ai-project-meta">
+                <div>
+                  <h3 class="ai-project-name" data-ai-title>Agentic AI System for Dental Clinic Automation</h3>
+                  <div class="ai-project-type" data-ai-subtitle>Healthcare automation · Agentic AI · Workflow automation</div>
+                </div>
+                <div class="ai-project-chip" data-ai-chip>LangChain · LangGraph · OpenAI</div>
+              </div>
+            </div>
+
+            <div class="ai-project-thumbs" data-ai-thumbs>
+              <button class="ai-thumb is-active" type="button" data-index="0" aria-label="Open dental clinic automation slide">
+                <img src="assets/projects/01-dental-clinic-automation.png" alt="Dental clinic automation thumbnail" />
+                <span>01</span>
+              </button>
+              <button class="ai-thumb" type="button" data-index="1" aria-label="Open PDF and image chatbot slide">
+                <img src="assets/projects/02-pdf-image-chatbot.png" alt="PDF and image chatbot thumbnail" />
+                <span>02</span>
+              </button>
+              <button class="ai-thumb" type="button" data-index="2" aria-label="Open smart calendar agent slide">
+                <img src="assets/projects/03-smart-calendar-agent.png" alt="Smart calendar agent thumbnail" />
+                <span>03</span>
+              </button>
+              <button class="ai-thumb" type="button" data-index="3" aria-label="Open voice agent slide">
+                <img src="assets/projects/04-voice-agent-audio-classification.png" alt="Voice agent thumbnail" />
+                <span>04</span>
+              </button>
+              <button class="ai-thumb" type="button" data-index="4" aria-label="Open research agent slide">
+                <img src="assets/projects/05-research-agent-literature-review.png" alt="Research agent thumbnail" />
+                <span>05</span>
+              </button>
+              <button class="ai-thumb" type="button" data-index="5" aria-label="Open CCTV intrusion detection slide">
+                <img src="assets/projects/06-cctv-intrusion-detection.png" alt="CCTV intrusion detection thumbnail" />
+                <span>06</span>
+              </button>
+              <button class="ai-thumb" type="button" data-index="6" aria-label="Open lane and vehicle detection slide">
+                <img src="assets/projects/07-lane-vehicle-detection.png" alt="Lane and vehicle detection thumbnail" />
+                <span>07</span>
+              </button>
+              <button class="ai-thumb" type="button" data-index="7" aria-label="Open crack measurement UNET slide">
+                <img src="assets/projects/08-crack-measurement-unet.png" alt="Crack measurement using UNET thumbnail" />
+                <span>08</span>
+              </button>
+            </div>
+          </div>
+        </section>
       </section>
 
       <section id="skills" class="section panel reveal">
@@ -1096,5 +1183,6 @@
     </footer>
   </div>
 
+  <script src="projects-slider.js"></script>
 </body>
 </html>
